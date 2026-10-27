@@ -1,12 +1,16 @@
-import "./Hero.css";
 
 import React from "react";
+import "./Hero.css";
 
 export default function Hero() {
   return (
     <section className="ykr-hero" id="home">
       <div className="ykr-hero-container">
+
+        {/* LEFT CONTENT */}
+
         <div className="ykr-hero-content">
+
           <span className="ykr-hero-label">
             YKR TRAINING INSTITUTE • PCMC, PUNE
           </span>
@@ -26,22 +30,34 @@ export default function Hero() {
             through practical, activity-based training.
           </p>
 
+          {/* HERO BUTTONS */}
+
           <div className="ykr-hero-actions">
+
             <a
               href="https://wa.me/917218550652?text=Hello%2C%20I%20want%20to%20book%20a%20free%20demo."
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="ykr-hero-primary"
             >
-              Book a Free Demo <span>↗</span>
+              Book a Free Demo
+              <span aria-hidden="true">↗</span>
             </a>
 
-            <a href="#courses" className="ykr-hero-secondary">
-              Explore Courses <span>→</span>
+            <a
+              href="#courses"
+              className="ykr-hero-secondary"
+            >
+              Explore Courses
+              <span aria-hidden="true">→</span>
             </a>
+
           </div>
 
+          {/* HERO STATS */}
+
           <div className="ykr-hero-stats">
+
             <div>
               <strong>6</strong>
               <span>PCMC Branches</span>
@@ -56,27 +72,51 @@ export default function Hero() {
               <strong>8 AM – 9 PM</strong>
               <span>Flexible Batches</span>
             </div>
+
           </div>
         </div>
 
+        {/* RIGHT IMAGE - FIRST ON MOBILE */}
+
         <div className="ykr-hero-visual">
+
           <div className="ykr-hero-image">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1100&q=85"
+              src="/hero.jpg"
               alt="Communication and professional training session"
+              fetchPriority="high"
             />
           </div>
 
+          {/* FLOATING CARD */}
+
           <div className="ykr-hero-floating-card">
-            <span className="ykr-hero-card-icon">✦</span>
+
+            <span className="ykr-hero-card-icon">
+              ✦
+            </span>
+
             <div>
-              <strong>Practice Makes Confidence</strong>
-              <span>Learn • Practice • Perform</span>
+              <strong>
+                Practice Makes Confidence
+              </strong>
+
+              <span>
+                Learn • Practice • Perform
+              </span>
             </div>
+
           </div>
 
-          <div className="ykr-hero-image-decoration" />
+          {/* IMAGE DECORATION */}
+
+          <div
+            className="ykr-hero-image-decoration"
+            aria-hidden="true"
+          />
+
         </div>
+
       </div>
     </section>
   );
