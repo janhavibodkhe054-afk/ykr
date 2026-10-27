@@ -1,16 +1,6 @@
-import React from "react";
-import {
-  ArrowUpRight,
-  BriefcaseBusiness,
-  Mic2,
-  MessagesSquare,
-  PersonStanding,
-  Sparkles,
-  UserRoundCheck,
-  TrendingUp,
-  Landmark,
-} from "lucide-react";
 
+import React from "react";
+import { ArrowUpRight } from "lucide-react";
 import "./Courses.css";
 
 const courses = [
@@ -20,7 +10,7 @@ const courses = [
     highlight: "PROFESSIONAL · IMPACT",
     image: "/train1.jpg",
     description:
-      "Your ideas deserve to be heard. Communicate clearly in meetings, write effective emails, and create a strong professional impression in the workplace.",
+      "Communicate confidently in meetings, write professional emails and create a strong impression at work.",
   },
   {
     id: "02",
@@ -28,7 +18,7 @@ const courses = [
     highlight: "COURAGE · EXPRESSION",
     image: "/train2.png",
     description:
-      "Stop letting the fear of judgment silence your voice. Overcome nervousness, command attention, and speak confidently in front of any audience.",
+      "Overcome stage fear, speak with confidence and connect effectively with any audience.",
   },
   {
     id: "03",
@@ -36,7 +26,7 @@ const courses = [
     highlight: "CONNECTION · CLARITY",
     image: "/train3.jpg",
     description:
-      "Being understood changes everything. Express your thoughts clearly, listen with empathy, and build stronger personal and professional relationships.",
+      "Express your ideas clearly, improve listening skills and build stronger relationships.",
   },
   {
     id: "04",
@@ -44,7 +34,7 @@ const courses = [
     highlight: "PRESENCE · CONFIDENCE",
     image: "/train4.jpg",
     description:
-      "Before you speak, your body sends a message. Master posture, gestures, eye contact, and facial expressions to communicate confidence and make a positive first impression.",
+      "Master posture, gestures, eye contact and confident non-verbal communication.",
   },
   {
     id: "05",
@@ -52,7 +42,7 @@ const courses = [
     highlight: "GROWTH · SELF-CONFIDENCE",
     image: "/train5.jpg",
     description:
-      "Discover your strengths and unlock your potential. Build self-confidence, improve interpersonal skills, and become a stronger, more confident version of yourself.",
+      "Discover your strengths, develop self-confidence and improve your interpersonal skills.",
   },
   {
     id: "06",
@@ -60,7 +50,7 @@ const courses = [
     highlight: "CAREER · OPPORTUNITY",
     image: "/train6.jpg",
     description:
-      "Your skills deserve the right opportunity. Overcome interview anxiety, present your strengths effectively, and make a confident impression on potential employers.",
+      "Prepare for interviews, present your strengths and make a confident professional impression.",
   },
   {
     id: "07",
@@ -68,7 +58,7 @@ const courses = [
     highlight: "SALES · LEADERSHIP",
     image: "/train7.jpg",
     description:
-      "Sales success begins with understanding people. Build trust, handle objections, influence decisions ethically, and convert conversations into business opportunities using the SPANCO model.",
+      "Build customer trust, handle objections and strengthen sales skills using the SPANCO model.",
   },
   {
     id: "08",
@@ -76,7 +66,7 @@ const courses = [
     highlight: "LEADERSHIP · PUBLIC IMPACT",
     image: "/train8.jpg",
     description:
-      "Leadership begins with the courage to stand up and the ability to inspire others. Build public speaking confidence, develop leadership qualities, master body language, communicate effectively with citizens, and present your vision with clarity, credibility, and impact.",
+      "Develop leadership, public speaking, body language and effective citizen communication.",
   },
 ];
 
@@ -84,11 +74,14 @@ export default function Courses() {
   return (
     <section className="ykr-courses" id="courses">
       <div className="ykr-courses-container">
+
         {/* SECTION HEADING */}
 
         <div className="ykr-courses-heading">
           <div>
-            <span className="ykr-courses-eyebrow">OUR TRAINING PROGRAMS</span>
+            <span className="ykr-courses-eyebrow">
+              OUR TRAINING PROGRAMS
+            </span>
 
             <h2>
               Develop Skills That
@@ -97,44 +90,57 @@ export default function Courses() {
           </div>
 
           <p>
-            Explore practical training programs designed to strengthen your
-            communication, confidence, professional skills and leadership
-            abilities.
+            Explore practical training programs designed
+            to strengthen your communication, confidence,
+            professional skills and leadership abilities.
           </p>
         </div>
 
-        {/* TWO COLUMN COURSES */}
+        {/* FOUR CARDS PER ROW */}
 
         <div className="ykr-courses-grid">
           {courses.map((course) => {
             const whatsappUrl =
               "https://wa.me/917218550652?text=" +
               encodeURIComponent(
-                `Hello YKR Training Institute, I would like to enquire about ${course.title}.`,
+                `Hello YKR Training Institute, I would like to enquire about ${course.title}.`
               );
 
             return (
-              <article className="ykr-course-card" key={course.id}>
+              <article
+                className="ykr-course-card"
+                key={course.id}
+              >
+
                 {/* COURSE IMAGE */}
 
                 <div className="ykr-course-image">
-                  <img src={course.image} alt={course.title} loading="lazy" />
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    loading="lazy"
+                  />
 
-                  <span className="ykr-course-image-number">{course.id}</span>
+                  <span className="ykr-course-image-number">
+                    {course.id}
+                  </span>
                 </div>
 
-                {/* COURSE CONTENT */}
+                {/* COURSE INFORMATION */}
 
                 <div className="ykr-course-content">
-                  <h3>
-                    {course.id}. {course.title}
-                  </h3>
 
                   <span className="ykr-course-highlight">
                     {course.highlight}
                   </span>
 
-                  <p className="ykr-course-description">{course.description}</p>
+                  <h3>{course.title}</h3>
+
+                  <p className="ykr-course-description">
+                    {course.description}
+                  </p>
+
+                  {/* CTA BUTTON */}
 
                   <a
                     href={whatsappUrl}
@@ -143,8 +149,9 @@ export default function Courses() {
                     className="ykr-course-link"
                   >
                     Enquire Now
-                    <ArrowUpRight size={17} />
+                    <ArrowUpRight size={16} />
                   </a>
+
                 </div>
               </article>
             );
@@ -168,6 +175,7 @@ export default function Courses() {
             <ArrowUpRight size={17} />
           </a>
         </div>
+
       </div>
     </section>
   );
